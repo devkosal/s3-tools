@@ -1,6 +1,7 @@
 function generateLink() {
     const pathInput = document.getElementById('s3path').value;
-    const regionInput = document.getElementById('region').value || 'us-west-2';
+    const regionSelect = document.getElementById('region');
+    const regionInput = regionSelect.value;
     const result = document.getElementById('result');
 
     if (!pathInput.startsWith("s3://")) {
@@ -19,4 +20,15 @@ function generateLink() {
     }
 
     result.textContent = link;
+
+    // Save region to cookies
+    document.cookie = "region=" + regionInput + ";path=/;max-age=" + 60 * 60 * 24 * 30; // Expires in 30 days
+}
+
+// Load region from cookies
+window.onload = function() {
+    const region = document.cookie.split('; ').find(row => row.startsWith('region='));
+    if (region) {
+        document.getElementById('region').value = region.split('=')[1];
+    }
 }

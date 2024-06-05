@@ -7,9 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>S3 Link Generator</h1>
-    <input type="text" id="s3path" placeholder="Enter full S3 path">
-    <input type="text" id="region" placeholder="Enter AWS Region (default: us-west-2)">
+    <h1>S3 Path to S3 Link Converter</h1>
+    <input type="text" id="s3path" placeholder="Enter full S3 path e.g. s3://bucket/path/to/file or s3://bucket/path/to/folder/" style="width: 80%;">
+    <select id="region">
+        <option value="">Select Region (Optional)</option>
+        <option value="us-east-1">US East 1 (N. Virginia)</option>
+        <option value="us-east-2">US East 2 (Ohio)</option>
+        <option value="us-west-1">US West 1 (N. California)</option>
+        <option value="us-west-2">US West 2 (Oregon)</option>
+        <option value="af-south-1">Africa South 1 (Cape Town)</option>
+        <option value="ap-east-1">Asia Pacific East 1 (Hong Kong)</option>
+        <option value="ap-south-1">Asia Pacific South 1 (Mumbai)</option>
+        <option value="ap-southeast-1">Asia Pacific Southeast 1 (Singapore)</option>
+        <option value="ap-southeast-2">Asia Pacific Southeast 2 (Sydney)</option>
+        <option value="ap-northeast-1">Asia Pacific Northeast 1 (Tokyo)</option>
+        <option value="ap-northeast-2">Asia Pacific Northeast 2 (Seoul)</option>
+        <option value="ap-northeast-3">Asia Pacific Northeast 3 (Osaka)</option>
+        <option value="ca-central-1">Canada Central 1 (Central)</option>
+        <option value="eu-central-1">Europe Central 1 (Frankfurt)</option>
+        <option value="eu-west-1">Europe West 1 (Ireland)</option>
+        <option value="eu-west-2">Europe West 2 (London)</option>
+        <option value="eu-west-3">Europe West 3 (Paris)</option>
+        <option value="eu-north-1">Europe North 1 (Stockholm)</option>
+        <option value="eu-south-1">Europe South 1 (Milan)</option>
+        <option value="me-south-1">Middle East South 1(Bahrain)</option>
+        <option value="sa-east-1">South America East 1 (São Paulo)</option>
+    </select>
     <button onclick="generateLink()">Generate Link</button>
     <p id="result"></p>
     <script src="app.js"></script>
