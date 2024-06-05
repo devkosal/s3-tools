@@ -19,7 +19,6 @@ function generateLink() {
         link = `https://s3.console.aws.amazon.com/s3/object/${bucket}/${key}?region=${regionInput}&tab=overview`;
     }
 
-    // Update to use a clickable link
     result.innerHTML = `<a href="${link}" target="_blank">${link}</a>`;
 
     // Save region to cookies
